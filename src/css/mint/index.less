@@ -1,0 +1,61 @@
+.mint-cell-wrapper{
+    background-image: none;
+}
+.mint-cell:last-child {
+    background-image: none;
+}
+
+/*输入框*/
+a.mint-cell{
+    background-color: transparent;
+    border: 1px solid var(--light-border-color);
+    border-radius: 0.12rem;
+    .mint-cell-value{
+        height: 100%;
+        >input{
+            height: 100%;
+            font-size: 0.3rem;
+            color: var(--default-font-color);
+        }
+    }
+}
+
+/*checklist复选框*/
+.mint-checkbox-input:checked + .mint-checkbox-core{
+    background-color: var(--checklist-bg-color);
+    border-color: var(--checklist-bg-color);
+}
+/*radio单选*/
+.mint-radio-input:checked + .mint-radio-core{
+    background-color: var(--checklist-bg-color);
+    border-color: var(--checklist-bg-color);
+}
+.mint-radio-core{
+    width: 0.28rem;
+    height: 0.28rem;
+}
+/*button按钮*/
+.mint-button{
+    border-radius: 0.12rem;
+}
+.mint-button--default{
+    background-color: var(--btn-default-bg-color);
+    border: 1px solid var(--default-border-color);
+    color: var(--default-font-color);
+}
+.mint-button--primary{
+    background-color: var(--btn-primary-bg-color);
+    border: 1px solid var(--highlight-border-color);
+    color: var(--default-font-color);
+}
+/*tab*/
+.mint-navbar{
+    background-color: transparent;
+    .mint-tab-item.is-selected{
+        border-bottom: 3px solid var(--highlight-border-color);
+        color: var(--highlight-border-color);
+    }
+    .mint-tab-item-label{
+        font-size: 0.3rem;
+    }
+}

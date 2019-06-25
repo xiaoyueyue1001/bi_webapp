@@ -1,0 +1,133 @@
+#sidebar {
+    height: 100%;
+    .wrap{
+      height: 100%;
+      background-color: var(--sidebar-bg-color);
+      > .search-wrap {
+        height: 1.68rem;
+        border-bottom: 1px solid var(--default-border-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        > .search {
+          width: 5.58rem;
+          height: 0.9rem;
+        }
+        > .bi-iconfont {
+          position: absolute;
+          right: 0.7rem;
+          font-size: 0.36rem;
+          color: var(--default-icon-color);
+        }
+      }
+      > .groupings-wrap {
+        height: calc(100% - 1.68rem);
+        overflow-y: auto;
+        overflow-x: hidden;
+        > ul {
+          > li {
+            min-height: 0.9rem;
+            border-bottom: 1px solid var(--default-border-color);
+            >.title{
+              height: 0.9rem;
+              padding: 0 0.4rem;
+              position: relative;
+              background: transparent;
+              >.left{
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  position: absolute;
+                  left: 0.4rem;
+                  top: 0;
+                  background-color: transparent;
+                  i.bi-iconfont{
+                    font-size: 0.4rem;
+                    color: var(--gray-font-color);
+                  }
+                  span{
+                      margin-left: 0.2rem;
+                      font-size: 0.32rem;
+                      text-overflow:ellipsis;
+                      white-space: nowrap;
+                      overflow: hidden;
+                  }
+              }
+              >.right{
+                  width: 0.3rem;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  position: absolute;
+                  top: 0;
+                  right: 0.5rem;
+                  background-color: transparent;
+                  i.bi-iconfont{
+                    font-size: 0.24rem;
+                    color: var(--gray-font-color);
+                  }
+              }
+            }
+            >.expand{
+              transition: all 0.2s linear;
+              height: 0;
+              overflow: hidden;
+              padding: 0 0.4rem;
+              >.items{
+                  >.item{
+                      margin: 0 0 0 15px;
+                      height: 0.9rem;
+                      line-height: 0.9rem;
+                      font-size: 0.3rem;
+                      border-left: 1px dashed var(--gray-font-color);
+                      display: flex;
+                      align-items: center;
+                      &.active{
+                        color: var(--highlight-color);
+                        // background-color: var(--table-hover-bg-color);
+                      }
+                      &::before{
+                        content: "";
+                        display: inline-block;
+                        width: 0.15rem;
+                        height: 0;
+                        border-bottom: 1px dashed var(--gray-font-color);
+                      }
+                      .name{
+                          width: 3rem;
+                          display: flex;
+                          align-items: center;
+                          .dashboard-name{
+                            max-width: 3rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                          }
+                      }
+                  }
+              }
+              >.none{
+                  font-size: 14px;
+                  height: 40px;
+                  line-height: 40px;
+                  text-align: center;
+              }
+            }
+            &.isExpand{
+                .title{
+                  background-color: var(--light-header-bg-color);
+                  i.ivu-icon-ios-arrow-down{
+                      transform: rotateZ(-180deg);
+                  }
+                }
+                .expand{
+                  padding-top: 0.2rem;
+                  padding-bottom: 0.2rem;
+              }
+            }
+          }
+        }
+      }
+      }
+  }
