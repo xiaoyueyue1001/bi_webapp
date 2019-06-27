@@ -59,3 +59,36 @@ a.mint-cell{
         font-size: 0.3rem;
     }
 }
+/*MessageBox confirm框*/
+.mint-msgbox{
+    background-color: var(--modal-bg-color);
+    border: 1px solid var(--default-border-color);
+    border-radius: 6px;
+    width: 4rem;
+    .mint-msgbox-header{
+        background-color: var(--modal-title-bg-color);
+        padding: 0;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        .mint-msgbox-title{
+            color:var(--default-font-color);
+        }
+    }
+    .mint-msgbox-content{
+        border: none;
+        .mint-msgbox-message{
+            color:var(--default-font-color);
+            font-size: 0.2rem;
+        }
+    }
+    .mint-msgbox-btns{
+        .mint-msgbox-btn{
+            background-color: transparent;
+            &.mint-msgbox-cancel,
+            &.mint-msgbox-confirm{
+                border: 0;
+                color:var(--default-font-color);
+            }
+        }
+    }
+}

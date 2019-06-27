@@ -1,26 +1,22 @@
 <template>
-  <div
-    class="zcmorefunBubble"
-    :style="chartContainerStyle"
-  >
+  <div class="zcmorefunBubble" :style="chartContainerStyle">
     <div
       v-if="option"
       :style="{paddingTop: filterCompsData.length > 0 ? '30px' : '0px', width:'100%', height: '100%'}"
     >
-      <Spin
+      <!-- <Spin
         v-if="dataLoading"
         style="z-index: 100;"
         loaddingStyle="table"
-      ></Spin>
-      <div
-        v-if="option.title.show"
-        class="bubble-title"
-      >{{option.title.text}}</div>
+      ></Spin>-->
+      <div v-if="option.title.show" class="bubble-title">{{option.title.text}}</div>
       <div
         class="subtitle"
         v-if="option.title.show && option.title.subtext && option.title.subtext !== ''"
       >{{option.title.subtext}}</div>
-      <div :style="{height: option.title.show ? (option.title.subtext && option.title.subtext !== '' ? 'calc(89% - 20px)' : 'calc(94% - 20px)') : 'calc(100% - 20px)'}">
+      <div
+        :style="{height: option.title.show ? (option.title.subtext && option.title.subtext !== '' ? 'calc(89% - 20px)' : 'calc(94% - 20px)') : 'calc(100% - 20px)'}"
+      >
         <div
           class="chartContainer"
           ref="chartContainer"
@@ -52,7 +48,6 @@
       </div>
     </div>
   </div>
-
 </template>
 <script>
 import FiltersInChart from "./FiltersInChart";

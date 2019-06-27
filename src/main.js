@@ -11,11 +11,11 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
 import './css/mint/index.less' //自定义部分mint样式
 import "./css/iconfont/iconfont.css";
-// import echarts from "./components/apache-echarts-4.2.1-incubating-src";
+import '@babel/polyfill'
 var echarts = require("./components/apache-echarts-4.2.1-incubating-src")
-require("./components/apache-echarts-4.2.1-incubating-src/extension-src/dataTool")(
-  echarts
-);
+import initDataTool from "./components/apache-echarts-4.2.1-incubating-src/extension-src/dataTool"
+initDataTool(echarts);
+const Bus = new Vue();
 
 Vue.use(Mint);
 Vue.prototype.$echarts = echarts;
@@ -28,10 +28,13 @@ router.beforeEach(({ meta, path, query }, from, next) => {
   // store.commit("setCurrentQuery", query);
   // store.commit("setUserInfo", userSession);
   if (!userSession && ["/login"].indexOf(path) === -1) {
-    window.location.href = `${
-      window.location.origin
-      }/#/login?backUrl=${encodeURIComponent(window.location.href)}`;
+    // window.location.href = `${
+    //   window.location.origin
+    //   }/#/login?backUrl=${encodeURIComponent(window.location.href)}`;
     // window.event.returnValue = false;
+    router.push({
+      name: 'login'
+    })
   } else {
     next();
   }
@@ -40,5 +43,8 @@ router.beforeEach(({ meta, path, query }, from, next) => {
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  data: {
+    Bus
+  }
 }).$mount('#app')

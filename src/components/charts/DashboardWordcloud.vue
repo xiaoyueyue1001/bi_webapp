@@ -5,16 +5,12 @@
     ref="chartContainer"
     :style="chartContainerStyle"
   >
-    <Spin
+    <!-- <Spin
       v-if="dataLoading"
       style="z-index: 100;"
       loaddingStyle="table"
-    ></Spin>
-    <div
-      class="myChart"
-      ref="myChart"
-    >
-    </div>
+    ></Spin>-->
+    <div class="myChart" ref="myChart"></div>
 
     <GoIn
       :goIn="option ? option.goIn : null"
@@ -62,7 +58,7 @@ export default {
   props: {
     chartId: {
       type: String,
-      default: null,
+      default: null
     },
     colorThemeName: {
       type: String,
@@ -118,10 +114,12 @@ export default {
       return {};
     },
     colorThemeColors() {
-      if(!this.colorThemeName) {
+      if (!this.colorThemeName) {
         return colorThemes[0].colors;
       }
-      const theme = colorThemes.find(item => {return item.name === this.colorThemeName});
+      const theme = colorThemes.find(item => {
+        return item.name === this.colorThemeName;
+      });
       return theme.colors;
     }
   },
@@ -716,8 +714,9 @@ export default {
     freshClickCallback() {
       this.myChart.off("click");
       if (
-        this.option &&
-        (this.option.clickCallback || (this.linkagePubs && this.linkagePubs.length > 0)) || 
+        (this.option &&
+          (this.option.clickCallback ||
+            (this.linkagePubs && this.linkagePubs.length > 0))) ||
         (this.jumpSetting && this.jumpSetting.targetType)
       ) {
         const that = this;
@@ -971,10 +970,10 @@ export default {
   watch: {
     chartId: {
       handler(val, oldVal) {
-        if(oldVal) {
+        if (oldVal) {
           this.$root.Bus.$off("freshChart-" + this.chartId, this.freshChart);
         }
-        if(val) {
+        if (val) {
           this.$root.Bus.$on("freshChart-" + this.chartId, this.freshChart);
         }
       }

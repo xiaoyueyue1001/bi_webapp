@@ -528,40 +528,40 @@ function groupData(array, getKey) {
   };
 }
 
-// exports.normalizeToArray = normalizeToArray;
-// exports.defaultEmphasis = defaultEmphasis;
-// exports.TEXT_STYLE_OPTIONS = TEXT_STYLE_OPTIONS;
-// exports.getDataItemValue = getDataItemValue;
-// exports.isDataItemOption = isDataItemOption;
-// exports.mappingToExists = mappingToExists;
-// exports.makeIdAndName = makeIdAndName;
-// exports.isNameSpecified = isNameSpecified;
-// exports.isIdInner = isIdInner;
-// exports.compressBatches = compressBatches;
-// exports.queryDataIndex = queryDataIndex;
-// exports.makeInner = makeInner;
-// exports.parseFinder = parseFinder;
-// exports.setAttribute = setAttribute;
-// exports.getAttribute = getAttribute;
-// exports.getTooltipRenderMode = getTooltipRenderMode;
-// exports.groupData = groupData;
+exports.normalizeToArray = normalizeToArray;
+exports.defaultEmphasis = defaultEmphasis;
+exports.TEXT_STYLE_OPTIONS = TEXT_STYLE_OPTIONS;
+exports.getDataItemValue = getDataItemValue;
+exports.isDataItemOption = isDataItemOption;
+exports.mappingToExists = mappingToExists;
+exports.makeIdAndName = makeIdAndName;
+exports.isNameSpecified = isNameSpecified;
+exports.isIdInner = isIdInner;
+exports.compressBatches = compressBatches;
+exports.queryDataIndex = queryDataIndex;
+exports.makeInner = makeInner;
+exports.parseFinder = parseFinder;
+exports.setAttribute = setAttribute;
+exports.getAttribute = getAttribute;
+exports.getTooltipRenderMode = getTooltipRenderMode;
+exports.groupData = groupData;
 
-export default {
-  normalizeToArray: normalizeToArray,
-  defaultEmphasis: defaultEmphasis,
-  TEXT_STYLE_OPTIONS: TEXT_STYLE_OPTIONS,
-  getDataItemValue: getDataItemValue,
-  isDataItemOption: isDataItemOption,
-  mappingToExists: mappingToExists,
-  makeIdAndName: makeIdAndName,
-  isNameSpecified: isNameSpecified,
-  isIdInner: isIdInner,
-  compressBatches: compressBatches,
-  queryDataIndex: queryDataIndex,
-  makeInner: makeInner,
-  parseFinder: parseFinder,
-  setAttribute: setAttribute,
-  getAttribute: getAttribute,
-  getTooltipRenderMode: getTooltipRenderMode,
-  groupData: groupData
-}
+// export default {
+//   normalizeToArray: normalizeToArray,
+//   defaultEmphasis: defaultEmphasis,
+//   TEXT_STYLE_OPTIONS: TEXT_STYLE_OPTIONS,
+//   getDataItemValue: getDataItemValue,
+//   isDataItemOption: isDataItemOption,
+//   mappingToExists: mappingToExists,
+//   makeIdAndName: makeIdAndName,
+//   isNameSpecified: isNameSpecified,
+//   isIdInner: isIdInner,
+//   compressBatches: compressBatches,
+//   queryDataIndex: queryDataIndex,
+//   makeInner: makeInner,
+//   parseFinder: parseFinder,
+//   setAttribute: setAttribute,
+//   getAttribute: getAttribute,
+//   getTooltipRenderMode: getTooltipRenderMode,
+//   groupData: groupData
+// }

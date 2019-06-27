@@ -78,7 +78,7 @@
           @keyup.enter="currentPageChanged"
         ></input>
         <div style="margin-right: 6px;">{{'/' + pageCount}}</div>
-        <Button
+        <!-- <Button
           class="page-operation"
           type="ghost"
           @click="toPrevPage"
@@ -88,8 +88,12 @@
             type="md-arrow-dropup"
             size=20
           />
-        </Button>
-        <Button
+        </Button> -->
+        
+          <i class="bi-iconfont bi-icon-arrow-solid-up" style="fontSize:20px" 
+          @click="toPrevPage"
+          v-if="currentPage!==1"></i>
+        <!-- <Button
           class="page-operation"
           type="ghost"
           @click="toNextPage"
@@ -99,7 +103,9 @@
             type="md-arrow-dropdown"
             size=20
           />
-        </Button>
+        </Button> -->        
+          <i class="bi-iconfont bi-icon-arrow-solid-down" style="fontSize:20px" @click="toNextPage"
+          v-if="currentPage!==pageCount"></i>
       </div>
 
       <GoIn

@@ -1,19 +1,11 @@
 <template>
-  <div
-    class="chartContainer"
-    id="chartContainer"
-    ref="chartContainer"
-  >
-    <Spin
+  <div class="chartContainer" id="chartContainer" ref="chartContainer">
+    <!-- <Spin
       v-if="dataLoading"
       style="z-index: 100;"
       loaddingStyle="table"
-    ></Spin>
-    <div
-      class="myChart"
-      ref="myChart"
-    >
-    </div>
+    ></Spin>-->
+    <div class="myChart" ref="myChart"></div>
     <GoIn
       :goIn="option ? option.goIn : null"
       :goInFieldInfo="goInFieldInfo"
@@ -217,7 +209,7 @@ export default {
         if (!geoCode) {
           return;
         }
-        require(["./mapData/china/" + geoCode + ".json"], (mapJson) => {
+        require(["./mapData/china/" + geoCode + ".json"], mapJson => {
           this.$echarts.registerMap(map, mapJson);
           if (this.myChart) {
             this.myChart.clear();
@@ -229,7 +221,10 @@ export default {
             this.myChart.off("georoam");
             this.myChart.off("datazoom");
             if (this.clickCallback) {
-              if ( val.clickCallback && JSON.stringify(val.goIn) !== JSON.stringify(oldVal.goIn)) {
+              if (
+                val.clickCallback &&
+                JSON.stringify(val.goIn) !== JSON.stringify(oldVal.goIn)
+              ) {
                 this.goInFieldInfo = null;
                 this.goInFieldInfoArr = [];
               }
@@ -246,7 +241,6 @@ export default {
             }
           }
         });
-        
       },
       deep: true
     },

@@ -66,10 +66,10 @@
         @click="toPrevPage"
         :disabled="currentPage===1"
       >
-        <Icon
+        <!-- <Icon
           type="md-arrow-dropup"
           size=20
-        />
+        /> -->
       </Button>
       <Button
         class="page-operation"
@@ -77,10 +77,10 @@
         @click="toNextPage"
         :disabled="currentPage===pageCount"
       >
-        <Icon
+        <!-- <Icon
           type="md-arrow-dropdown"
           size=20
-        />
+        /> -->
       </Button>
     </div>
     <div

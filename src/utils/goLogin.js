@@ -32,5 +32,5 @@ export const goLogin = () => {
     onCancel: () => {
     }
   });
-  vue.$Spin.hide();
+  // vue.$Spin.hide();
 };

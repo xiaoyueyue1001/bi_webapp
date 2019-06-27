@@ -12,10 +12,10 @@
         <input :value="currentPage" @keyup.enter="currentPageChanged"></input>
         <div>{{'/' + pageCount}}</div>
         <Button class="page-operation" @click="toPrevPage" :disabled="currentPage===1">
-          <Icon type="md-arrow-dropup" size=27 />
+          <!-- <Icon type="md-arrow-dropup" size=27 /> -->
         </Button>
         <Button class="page-operation" @click="toNextPage" :disabled="currentPage===pageCount">
-          <Icon type="md-arrow-dropdown" size=27 />
+          <!-- <Icon type="md-arrow-dropdown" size=27 /> -->
         </Button>
       </div>
     </div>

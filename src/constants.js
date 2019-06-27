@@ -1,5 +1,5 @@
 export const BASE = "/bi/"; // 大数据平台改为 export const BASE = "/dubhe/dubhe/";
-// export const BASE = "http://172.16.5.112:7087/";
+// export const BASE = "http://172.16.5.112:7087/bi/";
 
 /*登陆、登出*/
 export const LOGIN = {

@@ -14,11 +14,15 @@
   </mt-popup>
 </template>
 <script>
+import { ExportToCsv } from "export-to-csv";
+import { htmlToPng } from "@/utils/htmlToFile.js";
 export default {
   data() {
     return {
-        show:false,
+      show: false,
       type: "csv",
+      chartData: {},
+      csvData: {},
       options: [
         {
           label: "CSV文件",
@@ -36,7 +40,29 @@ export default {
       this.show = false;
     },
     confirm() {
+      if (this.type === "png") {
+      }
+      switch (this.type) {
+        case "csv":
+          this.exportCsv();
+          break;
+        case "png":
+          this.exportPng();
+          break;
+        default:
+          break;
+      }
       this.cancel();
+    },
+    exportPng() {
+      htmlToPng(
+        "#chart" + this.chartData.chartId,
+        this.chartData.chartName + ".png"
+      );
+    },
+    exportCsv() {
+      const csvExporter = new ExportToCsv(this.csvData.options);
+      csvExporter.generateCsv(this.csvData.data);
     }
   }
 };

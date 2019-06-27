@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "screenfull": "^3.3.3",
+    "export-to-csv": "^0.1.2",
+    "html2canvas": "^1.0.0-alpha.12",
     "velocity-animate": "^1.5.2",
     "d3-cloud": "^1.2.5",
     "g2-vue": "^1.0.1",

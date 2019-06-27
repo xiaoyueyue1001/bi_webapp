@@ -5,7 +5,7 @@
     ref="chartContainer"
     :style="chartContainerStyle"
   >
-    <Spin v-if="dataLoading" style="z-index: 100;" loaddingStyle="table"></Spin>
+    <!-- <Spin v-if="dataLoading" style="z-index: 100;" loaddingStyle="table"></Spin> -->
     <div class="myChart" ref="myChart"></div>
 
     <GoIn

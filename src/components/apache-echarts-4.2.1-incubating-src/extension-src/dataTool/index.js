@@ -32,7 +32,15 @@ export { prepareBoxplotData };
 // But the old version of echarts do not have `dataTool` namespace,
 // so check it before mounting.
 
-module.exports = function initDataTool(echarts) {
+// module.exports = function initDataTool(echarts) {
+//     if (echarts.dataTool) {
+//         echarts.dataTool.version = version;
+//         echarts.dataTool.gexf = gexf;
+//         echarts.dataTool.prepareBoxplotData = prepareBoxplotData;
+//     }
+// }
+
+export default function initDataTool(echarts) {
     if (echarts.dataTool) {
         echarts.dataTool.version = version;
         echarts.dataTool.gexf = gexf;

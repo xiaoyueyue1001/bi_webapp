@@ -7,14 +7,17 @@
     <div class="panel-wrap">
       <div class="title">
         {{dashBoardData.dashBoardName}}
-        <i class="bi-iconfont bi-icon-fullscreen"></i>
+        <i
+          class="bi-iconfont bi-icon-fullscreen"
+          @click="dashboardFullscreen"
+        ></i>
       </div>
       <div class="charts">
         <ChartWrap
           v-for="(chart,index) in chartsData"
           :key="index"
           :chart="chart"
-          @operating="type=>{chartOperating(type,chart)}"
+          @operating="data=>{chartOperating(data,chart)}"
           class="chart-wrap"
         ></ChartWrap>
       </div>
@@ -64,11 +67,11 @@ export default {
     }
   },
   methods: {
-    chartOperating(type, chartData) {
+    chartOperating(data, chartData) {
       console.log(arguments);
-      switch (type) {
+      switch (data.type) {
         case "export":
-          this.showExportModal();
+          this.showExportModal(chartData, data.csvData);
           break;
         case "share":
           this.showShareModal(chartData);
@@ -83,8 +86,10 @@ export default {
     showSidebar() {
       this.$refs.sidebar.show = true;
     },
-    showExportModal() {
+    showExportModal(chartData, csvData) {
       this.$refs.exportModal.show = true;
+      this.$refs.exportModal.chartData = chartData;
+      this.$refs.exportModal.csvData = csvData;
     },
     showShareModal(chartData) {
       this.$refs.shareModal.show = true;
@@ -95,6 +100,14 @@ export default {
       this.$refs.moveChartModal.chartData = chartData;
       this.$refs.moveChartModal.belongDashBoardCode = this.dashBoardData.dashBoardCode; //图表所属仪表盘的code
       this.$refs.moveChartModal.belongGroupingType = this.currentDashBoardBelongGroupingType; //图表所属仪表盘所属的分组的id
+    },
+    dashboardFullscreen() {
+      this.$router.push({
+        name: "dashboard",
+        params: {
+          from: "superpanel"
+        }
+      });
     }
   }
 };
